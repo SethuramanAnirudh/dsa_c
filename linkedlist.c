@@ -88,6 +88,11 @@ int add_node(struct node **head, int x){
 int remove_node(struct node**){
 
 }
-void display_linkedlist(struct node**){
-    
+void display_linkedlist(struct node** head){
+    struct node *t1;
+    t1=*head;
+    while(t1->next!=NULL){      
+       printf("--->%d\t",t1->data);
+        t1=t1->next;
+    }
 }
