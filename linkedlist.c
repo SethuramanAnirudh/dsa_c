@@ -85,13 +85,29 @@ int add_node(struct node **head, int x){
     }
 
 }
-int remove_node(struct node**){
+int remove_node(struct node** head){
+    struct node *t1,*t2;
+
+    t1=*head;
+
+
+    while(t1->next!=NULL){
+        t2=t1;
+        t1=t1->next;
+    }
+    int x = t1->data;
+    t2->next=NULL;
+    free(t1);
+
+    return x;
 
 }
+
+
 void display_linkedlist(struct node** head){
     struct node *t1;
     t1=*head;
-    while(t1->next!=NULL){      
+    while(t1!=NULL){      
        printf("--->%d\t",t1->data);
         t1=t1->next;
     }
