@@ -25,7 +25,7 @@ int main(){
 
     while(1){
     label :
-    printf(" 1-->add node\n 2-->delete node 3-->display linked list\n ");
+    printf(" 1-->add node\n 2-->delete node\n 3-->display linked list\n ");
     scanf("%hhd",&choice);
     switch(choice){
         case 1 :
@@ -88,10 +88,12 @@ int add_node(struct node **head, int x){
 int remove_node(struct node** head){
     struct node *t1,*t2;
 
-    t1=*head;
-
-
-    while(t1->next!=NULL){
+    	t1=*head;
+	if(*head==NULL){
+		printf("no linked list present\n");
+		return -1;
+	}
+	while(t1->next!=NULL){
         t2=t1;
         t1=t1->next;
     }
